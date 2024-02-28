@@ -13,7 +13,8 @@ class Controller
             extract($info);
             include $view_path;
         } else {
-            $this->view('404');
+
+            echo "View not found";
         }
     }
 
