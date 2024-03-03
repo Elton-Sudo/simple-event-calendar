@@ -21,6 +21,8 @@ The simple Event Calendar Plugin is designed for WordPress administrators to man
     │   └── EventRepository.php
     └── Views/
         ├── Admin/
+            ├── add-event.php
+            ├── edit-event.php
             └── index.php
         ├── event.php
         └── events.php
