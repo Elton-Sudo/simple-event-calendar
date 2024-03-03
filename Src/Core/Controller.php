@@ -6,7 +6,7 @@ class Controller
     protected function view(string $view, array $info = []): void
     {
 
-        $view_path = plugin_dir_path(__DIR__) . "views/{$view}.php";
+        $view_path = plugin_dir_path(__DIR__) . "Views/{$view}.php";
 
         if (file_exists($view_path)) {
 
