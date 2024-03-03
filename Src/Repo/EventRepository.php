@@ -97,7 +97,7 @@ class EventRepository
         global $wpdb;
         return $wpdb->update(
             $this->table_name,
-            array(
+            [
                 'title' => $event->title,
                 'description' => $event->description,
                 'date' => $event->date,
@@ -106,8 +106,8 @@ class EventRepository
                 'image' => $event->image,
                 'type' => $event->type,
                 'keywords' => $event->keywords
-            ),
-            array('id' => $event->id)
+            ],
+            ['id' => $event->id]
         );
     }
 
@@ -115,6 +115,6 @@ class EventRepository
     {
         
         global $wpdb;
-        return $wpdb->delete($this->table_name, array('id' => $id));
+        return $wpdb->delete($this->table_name, ['id' => $id]);
     }
 }
