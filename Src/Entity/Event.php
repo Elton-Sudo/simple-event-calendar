@@ -3,29 +3,19 @@
 class Event 
 {
 
-    public $id;
-    public $title;
-    public $description;
-    public $date;
-    public $time;
-    public $location;
-    public $image;
-    public $type;
-    public $keywords;
+    public int $id;
+    public string $title;
+    public string $description;
+    public string $date;
+    public string $time;
+    public string $location;
+    public string $image;
+    public string $type;
+    public array $keywords;
 
-    public function __construct(
-        $id, 
-        $title, 
-        $description, 
-        $date, 
-        $time, 
-        $location, 
-        $image, 
-        $type, 
-        $keywords
-    ) 
+    public function __construct($id, $title, $description, $date, $time, $location, $image, $type, $keywords) 
     {
-
+        
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
