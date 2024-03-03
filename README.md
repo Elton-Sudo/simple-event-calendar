@@ -45,5 +45,10 @@ The simple Event Calendar Plugin is designed for WordPress administrators to man
 5. Clicking on an event will display detailed information about the event.
 6. Users can search for events using the search functionality and filter events based on their type.
 
+### Shortcodes
+
+- `[upcoming_events]`: Use this shortcode to display a list of upcoming events.
+- `[event_details]`: Use this shortcode to display detailed information about a specific event.
+
 
 Designed and developed by <a href="https://eltonbrown.co.za/">Elton Brown</a>
