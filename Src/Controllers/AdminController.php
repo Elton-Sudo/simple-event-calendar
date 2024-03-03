@@ -30,19 +30,25 @@ class AdminController extends Controller
 
         if (isset($_GET['action'])) {
 
-            if ($_GET['action'] === 'edit_event') {
+            if ($_GET['action'] === 'add_event') {
+                
+                return $admin_controller->view("Admin/add-event", []);
+            } else if ($_GET['action'] === 'edit_event') {
 
                 $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 $event = self::$event_repo->getEventById($event_id);
     
                 return $admin_controller->view("Admin/edit-event", ["event" => $event]);
-            } elseif ($_GET['action'] === 'add_event') {
-                
-                return $admin_controller->view("Admin/add-event", []);
+            } else if ($_GET['action'] === 'delete_event') {
+
+                $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
+                $event = self::$event_repo->getEventById($event_id);
             }
         }
         
-        $events = self::$event_repo->getAllEventTypes(); 
-        return $admin_controller->view("Admin/index", ["events" => $events]);
+        $all_events = self::$event_repo->getAllEvents(); 
+        return $admin_controller->view("Admin/index", [
+            'events' => $all_events,
+        ]);
     }
 }
