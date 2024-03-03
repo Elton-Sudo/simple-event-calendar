@@ -4,6 +4,24 @@
 
 The simple Event Calendar Plugin is designed for WordPress administrators to manage events efficiently. With this plugin, administrators will be able to add, edit, and delete events, categorize them by type, and tag them with relevant keywords. Users can view upcoming events, search for specific events, and filter events based on type.
 
+## Folder Structure
+
+    simple-event-calendar/
+    │
+    ├── simple-event-calendar-plugin.php
+    ├── init.php
+    ├── Controllers/
+    │   └── DefaultController.php
+    ├── Core/
+    │   └── Controller.php
+    ├── Entity/
+    │   └── Event.php
+    ├── Repo/
+    │   └── EventRepository.php
+    └── Views/
+        ├── Event.php
+        └── Events.php
+
 ## Installation
 
 1. Download the plugin ZIP file from the repository.
