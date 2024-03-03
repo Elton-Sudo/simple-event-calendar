@@ -17,6 +17,8 @@ class Installation {
             location varchar(255) NOT NULL,
             image varchar(255),
             type varchar(255) NOT NULL,
+            created datetime DEFAULT CURRENT_TIMESTAMP,
+            updated timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
             PRIMARY KEY  (id)
         ) $charset_collate;";
         
@@ -29,6 +31,8 @@ class Installation {
             id mediumint(9) NOT NULL AUTO_INCREMENT,
             event_id mediumint(9) NOT NULL,
             keyword varchar(255) NOT NULL,
+            created datetime DEFAULT CURRENT_TIMESTAMP,
+            updated timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
             PRIMARY KEY  (id),
             FOREIGN KEY  (event_id) REFERENCES $table_name(id) ON DELETE CASCADE
         ) $charset_collate;";
