@@ -58,7 +58,7 @@ class EventRepository
     {
         
         global $wpdb;
-        return $wpdb->update($this->keywords_table, array('keywords' => $keywords), array('event_id' => $eventId));
+        return $wpdb->update($this->keywords_table, ['keywords' => $keywords], ['event_id' => $eventId]);
     }
 
     private function getKeywordsForEvent($eventId) 
