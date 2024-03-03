@@ -11,7 +11,8 @@ The simple Event Calendar Plugin is designed for WordPress administrators to man
     ├── simple-event-calendar-plugin.php
     ├── init.php
     ├── Controllers/
-    │   └── DefaultController.php
+        ├── DefaultController.php
+    │   └── AdminController.php
     ├── Core/
     │   └── Controller.php
     ├── Entity/
@@ -19,8 +20,10 @@ The simple Event Calendar Plugin is designed for WordPress administrators to man
     ├── Repo/
     │   └── EventRepository.php
     └── Views/
-        ├── Event.php
-        └── Events.php
+        ├── Admin/
+            └── index.php
+        ├── event.php
+        └── events.php
 
 ## Installation
 
