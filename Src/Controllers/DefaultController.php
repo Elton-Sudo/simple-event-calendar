@@ -9,26 +9,14 @@ class DefaultController extends Controller
     {
 
         $this->repo = $this->loadRepository('EventRepository');
-
-        add_shortcode('upcoming_events', 'index');
-        add_shortcode('event_details', 'showEvent');
     }
 
     public function index(): void
     {
         
-        $events = $this->repo->getAllEventTypes();
+        $events = $this->repo->getAllEvents();
         $this->view("events", [
-            "events" => $events
-        ]);
-    }
-
-    public function show($type): void
-    {
-        
-        $events_by_type = $this->repo->getEventsByType($type);
-        $this->view("show", [
-            "events_by_type" => $events_by_type
+            'events' => $events
         ]);
     }
 
@@ -37,7 +25,16 @@ class DefaultController extends Controller
         
         $event = $this->repo->getEventById($id);
         $this->view("showEvent", [
-            "event" => $event
+            'event' => $event
+        ]);
+    }
+
+    public function filter($type): void
+    {
+        
+        $events_by_type = $this->repo->getEventsByType($type);
+        $this->view("show", [
+            'events_by_type' => $events_by_type
         ]);
     }
 }
