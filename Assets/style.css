@@ -1,0 +1,35 @@
+/*** TODO front-end styling ***/
+
+.upcoming-events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.event-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.event-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.event-details {
+    padding: 10px;
+}
+
+.event-details h3 {
+    margin-top: 0;
+}
+
+.event-details p {
+    margin: 5px 0;
+}
+
+.event-keywords {
+    font-style: italic;
+}

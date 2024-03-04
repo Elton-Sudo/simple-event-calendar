@@ -20,6 +20,7 @@ class EventRepository
         
         $events = [];
         foreach ($events_data as $event_data) {
+
             $event = new Event(
                 $event_data['id'],
                 $event_data['title'],
@@ -29,7 +30,8 @@ class EventRepository
                 $event_data['location'],
                 $event_data['image'],
                 $event_data['type'],
-                $this->getKeywordsForEvent($event_data['id'])
+                // TODO keywords
+                // $this->getKeywordsForEvent($event_data['id'])
             );
             $events[] = $event;
         }
@@ -68,7 +70,8 @@ class EventRepository
                 $row['location'],
                 $row['image'],
                 $row['type'],
-                $this->getKeywordsForEvent($row['id'])
+                // TODO keywords
+                // $this->getKeywordsForEvent($row['id'])
             );
         }
         return $events;
@@ -104,7 +107,8 @@ class EventRepository
                 $result['location'],
                 $result['image'],
                 $result['type'],
-                $this->getKeywordsForEvent($id)
+                // TODO keywords
+                // $this->getKeywordsForEvent($id)
             );
         }
         return null;
@@ -126,8 +130,6 @@ class EventRepository
                 'type' => $event->type,
             ]
         );
-        $eventId = $wpdb->insert_id;
-        $this->updateEventKeywords($eventId, [$event->keywords]);
     }
 
     public function updateEvent(Event $event)
@@ -147,7 +149,8 @@ class EventRepository
             ],
             ['id' => $event->id]
         );
-        $this->updateEventKeywords($event->id, $event->keywords);
+        // TODO keywords
+        // $this->updateEventKeywords($event->id, $event->keywords);
     }
 
     public function deleteEvent(int $id)
